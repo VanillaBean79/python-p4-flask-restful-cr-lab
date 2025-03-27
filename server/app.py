@@ -17,10 +17,21 @@ db.init_app(app)
 api = Api(app)
 
 class Plants(Resource):
-    pass
+   pass
+        
+    
 
 class PlantByID(Resource):
     pass
+
+@app.route('/plants')
+def index_plants():
+    plants = [plant.to_dict() for plant in Plant.query.all()]
+    
+    return make_response(plants, 200)
+
+
+
         
 
 if __name__ == '__main__':
