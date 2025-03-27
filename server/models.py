@@ -13,4 +13,4 @@ class Plant(db.Model, SerializerMixin):
     price = db.Column(db.Float)
 
 
-    serialize_only = ('id', 'name', 'image', 'price')
+    
